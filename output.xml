@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20170706 10:45:04.805" generator="Robot 3.0.2 (Python 2.7.13 on win32)">
+<suite source="C:\Python27\GitHub\SEIPortals_-master\tests\employeeportaltests.robot" id="s1" name="Employeeportaltests">
+<test id="s1-t1" name="User should be able to create an invoice">
+<kw type="setup" name="Begin Employee Portal TEst" library="Common">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>about:blank</arg>
+<arg>chrome</arg>
+</arguments>
+<msg timestamp="20170706 10:45:05.044" level="INFO">Opening browser 'chrome' to base url 'about:blank'</msg>
+<status status="PASS" endtime="20170706 10:45:08.691" starttime="20170706 10:45:05.044"></status>
+</kw>
+<kw name="Set Selenium Implicit Wait" library="Selenium2Library">
+<doc>Sets Selenium 2's default implicit wait in seconds and</doc>
+<arguments>
+<arg>20</arg>
+</arguments>
+<status status="PASS" endtime="20170706 10:45:08.695" starttime="20170706 10:45:08.692"></status>
+</kw>
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>http://employeportalweb-test.us-east-1.elasticbeanstalk.com/</arg>
+</arguments>
+<msg timestamp="20170706 10:45:08.696" level="INFO">Opening url 'http://employeportalweb-test.us-east-1.elasticbeanstalk.com/'</msg>
+<status status="PASS" endtime="20170706 10:45:10.539" starttime="20170706 10:45:08.696"></status>
+</kw>
+<status status="PASS" endtime="20170706 10:45:10.540" starttime="20170706 10:45:05.043"></status>
+</kw>
+<kw name="Login" library="EmployeePortalApp">
+<kw name="Send User Name Valid" library="Login">
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${UserNameField}</arg>
+<arg>${ValidUsername}</arg>
+</arguments>
+<msg timestamp="20170706 10:45:10.541" level="INFO">Typing text 'lkandumalla' into text field 'id=username'</msg>
+<status status="PASS" endtime="20170706 10:45:11.025" starttime="20170706 10:45:10.541"></status>
+</kw>
+<status status="PASS" endtime="20170706 10:45:11.025" starttime="20170706 10:45:10.541"></status>
+</kw>
+<kw name="Send Password Valid" library="Login">
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${PasswordField}</arg>
+<arg>${ValidPassword}</arg>
+</arguments>
+<msg timestamp="20170706 10:45:11.026" level="INFO">Typing text 'Password1234!' into text field 'id=password'</msg>
+<status status="PASS" endtime="20170706 10:45:11.412" starttime="20170706 10:45:11.025"></status>
+</kw>
+<status status="PASS" endtime="20170706 10:45:11.412" starttime="20170706 10:45:11.025"></status>
+</kw>
+<kw name="Click Login Button" library="Login">
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>${LoginBtn}</arg>
+</arguments>
+<msg timestamp="20170706 10:45:11.415" level="INFO">Clicking button 'id=Onsubmit'.</msg>
+<status status="PASS" endtime="20170706 10:45:11.561" starttime="20170706 10:45:11.414"></status>
+</kw>
+<status status="PASS" endtime="20170706 10:45:11.562" starttime="20170706 10:45:11.413"></status>
+</kw>
+<status status="PASS" endtime="20170706 10:45:11.562" starttime="20170706 10:45:10.540"></status>
+</kw>
+<kw name="Navigate to invoice create page" library="EmployeePortalApp">
+<kw name="Click Create Invoice Link" library="SideMenu">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${createinvoicelink}</arg>
+</arguments>
+<msg timestamp="20170706 10:45:11.565" level="INFO">Clicking element 'xpath=//*[@id="ep-sidebar"]/div[3]/span[4]/span/a'.</msg>
+<status status="PASS" endtime="20170706 10:45:13.258" starttime="20170706 10:45:11.565"></status>
+</kw>
+<status status="PASS" endtime="20170706 10:45:13.258" starttime="20170706 10:45:11.564"></status>
+</kw>
+<kw name="Input Tracking Number for Invoice" library="CreateInvoice">
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>${TrackingNumberSearchField}</arg>
+</arguments>
+<status status="PASS" endtime="20170706 10:45:13.537" starttime="20170706 10:45:13.260"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${TrackingNumberSearchField}</arg>
+<arg>93095528</arg>
+</arguments>
+<msg timestamp="20170706 10:45:13.539" level="INFO">Typing text '93095528' into text field 'xpath= //input[@placeholder='Tracking/SR Number']'</msg>
+<status status="PASS" endtime="20170706 10:45:13.904" starttime="20170706 10:45:13.538"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>${delay}</arg>
+</arguments>
+<msg timestamp="20170706 10:45:18.907" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" endtime="20170706 10:45:18.907" starttime="20170706 10:45:13.906"></status>
+</kw>
+<status status="PASS" endtime="20170706 10:45:18.908" starttime="20170706 10:45:13.259"></status>
+</kw>
+<kw name="Click Invoice Search Button" library="CreateInvoice">
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>${InvoiceSearchButton}</arg>
+</arguments>
+<status status="PASS" endtime="20170706 10:45:18.965" starttime="20170706 10:45:18.911"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${InvoiceSearchButton}</arg>
+</arguments>
+<msg timestamp="20170706 10:45:18.966" level="INFO">Clicking element 'xpath = //button[@ng-click='vm.fetchSr()']'.</msg>
+<status status="PASS" endtime="20170706 10:45:19.046" starttime="20170706 10:45:18.965"></status>
+</kw>
+<status status="PASS" endtime="20170706 10:45:19.046" starttime="20170706 10:45:18.909"></status>
+</kw>
+<kw name="Click Create New Invoice Button" library="CreateInvoice">
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>${CreateInvoiceButton}</arg>
+<arg>10</arg>
+</arguments>
+<status status="PASS" endtime="20170706 10:45:19.479" starttime="20170706 10:45:19.047"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${CreateInvoiceButton}</arg>
+</arguments>
+<msg timestamp="20170706 10:45:19.479" level="INFO">Clicking element 'xpath= //button[@ng-click='vm.createInvoice()']'.</msg>
+<status status="PASS" endtime="20170706 10:45:19.560" starttime="20170706 10:45:19.479"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>${delay}</arg>
+</arguments>
+<msg timestamp="20170706 10:45:24.561" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" endtime="20170706 10:45:24.561" starttime="20170706 10:45:19.561"></status>
+</kw>
+<status status="PASS" endtime="20170706 10:45:24.562" starttime="20170706 10:45:19.046"></status>
+</kw>
+<status status="PASS" endtime="20170706 10:45:24.562" starttime="20170706 10:45:11.563"></status>
+</kw>
+<kw name="Input invoice details" library="EmployeePortalApp">
+<kw name="Input SP Invoice Number" library="CreateInvoice">
+<kw name="Generate Random String" library="String">
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<arguments>
+<arg>8</arg>
+<arg>[NUMBERS]</arg>
+</arguments>
+<assign>
+<var>${InvoiceNumberRandom}</var>
+</assign>
+<msg timestamp="20170706 10:45:24.570" level="INFO">${InvoiceNumberRandom} = 02513069</msg>
+<status status="PASS" endtime="20170706 10:45:24.570" starttime="20170706 10:45:24.568"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${InvoiceNumberField}</arg>
+<arg>${InvoiceNumberRandom}</arg>
+</arguments>
+<msg timestamp="20170706 10:45:24.572" level="INFO">Typing text '02513069' into text field 'xpath= //input[@ng-model='vm.invHeader.spInvoiceNumber']'</msg>
+<status status="PASS" endtime="20170706 10:45:24.782" starttime="20170706 10:45:24.571"></status>
+</kw>
+<status status="PASS" endtime="20170706 10:45:24.782" starttime="20170706 10:45:24.567"></status>
+</kw>
+<kw name="Input GL Code" library="CreateInvoice">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3s</arg>
+</arguments>
+<msg timestamp="20170706 10:45:27.784" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" endtime="20170706 10:45:27.784" starttime="20170706 10:45:24.784"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${GLcodeField}</arg>
+<arg>7633</arg>
+</arguments>
+<msg timestamp="20170706 10:45:27.786" level="INFO">Typing text '7633' into text field 'xpath= //*[text()=' GL Code :']//following::input[1]'</msg>
+<status status="PASS" endtime="20170706 10:45:28.046" starttime="20170706 10:45:27.785"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3s</arg>
+</arguments>
+<msg timestamp="20170706 10:45:31.046" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" endtime="20170706 10:45:31.046" starttime="20170706 10:45:28.046"></status>
+</kw>
+<status status="PASS" endtime="20170706 10:45:31.047" starttime="20170706 10:45:24.783"></status>
+</kw>
+<kw name="Select GL Code" library="CreateInvoice">
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>${glcodeselection}</arg>
+</arguments>
+<status status="PASS" endtime="20170706 10:45:31.107" starttime="20170706 10:45:31.049"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${GLcodeselection}</arg>
+</arguments>
+<msg timestamp="20170706 10:45:31.108" level="INFO">Clicking element 'xpath= //a[@title='Miscellaneous Gas Expense (7633)']'.</msg>
+<status status="PASS" endtime="20170706 10:45:31.247" starttime="20170706 10:45:31.108"></status>
+</kw>
+<status status="PASS" endtime="20170706 10:45:31.248" starttime="20170706 10:45:31.048"></status>
+</kw>
+<kw name="Open Date Select Celandar" library="CreateInvoice">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${servicedatecalendarbutton}</arg>
+</arguments>
+<msg timestamp="20170706 10:45:31.249" level="INFO">Clicking element 'xpath= //i[@class='fa fa-calendar']'.</msg>
+<status status="PASS" endtime="20170706 10:45:31.444" starttime="20170706 10:45:31.249"></status>
+</kw>
+<status status="PASS" endtime="20170706 10:45:31.444" starttime="20170706 10:45:31.248"></status>
+</kw>
+<kw name="Select Todays Date" library="CreateInvoice">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${todaysdatebutton}</arg>
+</arguments>
+<msg timestamp="20170706 10:45:31.447" level="INFO">Clicking element 'xpath= //button[text()='Today']'.</msg>
+<status status="PASS" endtime="20170706 10:45:31.582" starttime="20170706 10:45:31.446"></status>
+</kw>
+<status status="PASS" endtime="20170706 10:45:31.582" starttime="20170706 10:45:31.445"></status>
+</kw>
+<kw name="Input Work Description" library="CreateInvoice">
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${WorkDescriptionField}</arg>
+<arg>"Automation Test Invoice"</arg>
+</arguments>
+<msg timestamp="20170706 10:45:31.583" level="INFO">Typing text '"Automation Test Invoice"' into text field 'id=txtNote'</msg>
+<status status="PASS" endtime="20170706 10:45:31.933" starttime="20170706 10:45:31.583"></status>
+</kw>
+<status status="PASS" endtime="20170706 10:45:31.934" starttime="20170706 10:45:31.582"></status>
+</kw>
+<kw name="Select GL Routing Code" library="CreateInvoice">
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${paidandinvoicedroutingcode}</arg>
+<arg>10</arg>
+</arguments>
+<status status="PASS" endtime="20170706 10:45:31.981" starttime="20170706 10:45:31.935"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>${PaidandInvoicedRoutingCode}</arg>
+</arguments>
+<msg timestamp="20170706 10:45:31.982" level="INFO">Clicking button 'xpath= //input[@value='N']'.</msg>
+<status status="PASS" endtime="20170706 10:45:32.072" starttime="20170706 10:45:31.981"></status>
+</kw>
+<status status="PASS" endtime="20170706 10:45:32.073" starttime="20170706 10:45:31.934"></status>
+</kw>
+<status status="PASS" endtime="20170706 10:45:32.073" starttime="20170706 10:45:24.565"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>${delay}</arg>
+</arguments>
+<msg timestamp="20170706 10:45:37.078" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" endtime="20170706 10:45:37.078" starttime="20170706 10:45:32.077"></status>
+</kw>
+<kw name="Add Labor Line Item" library="EmployeePortalApp">
+<kw name="Click Add Button" library="CreateInvoice">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${addlineitembutton}</arg>
+</arguments>
+<msg timestamp="20170706 10:45:37.084" level="INFO">Clicking element 'xpath= //button[@ng-click='vm.addLineItem()']'.</msg>
+<status status="PASS" endtime="20170706 10:45:37.210" starttime="20170706 10:45:37.083"></status>
+</kw>
+<status status="PASS" endtime="20170706 10:45:37.210" starttime="20170706 10:45:37.082"></status>
+</kw>
+<kw name="Select Labor Line Item" library="CreateInvoice">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${laborlineitemselection}</arg>
+</arguments>
+<msg timestamp="20170706 10:45:37.214" level="INFO">Clicking element 'xpath =//option[@label='LABOR']'.</msg>
+<status status="PASS" endtime="20170706 10:45:37.566" starttime="20170706 10:45:37.211"></status>
+</kw>
+<status status="PASS" endtime="20170706 10:45:37.566" starttime="20170706 10:45:37.211"></status>
+</kw>
+<kw name="Select Technician Labor" library="CreateInvoice">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${technicianlabor}</arg>
+</arguments>
+<msg timestamp="20170706 10:45:37.570" level="INFO">Clicking element 'xpath = //option[@value='TECHNICIAN LABOR']'.</msg>
+<status status="PASS" endtime="20170706 10:45:37.691" starttime="20170706 10:45:37.568"></status>
+</kw>
+<status status="PASS" endtime="20170706 10:45:37.691" starttime="20170706 10:45:37.567"></status>
+</kw>
+<kw name="Input SP Quantity" library="CreateInvoice">
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>${spquantityfield}</arg>
+</arguments>
+<status status="PASS" endtime="20170706 10:45:37.724" starttime="20170706 10:45:37.692"></status>
+</kw>
+<kw name="Clear Element Text" library="Selenium2Library">
+<doc>Clears the text value of text entry element identified by `locator`.</doc>
+<arguments>
+<arg>${spquantityfield}</arg>
+</arguments>
+<status status="PASS" endtime="20170706 10:45:37.805" starttime="20170706 10:45:37.724"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${spquantityfield}</arg>
+<arg>1</arg>
+</arguments>
+<msg timestamp="20170706 10:45:37.807" level="INFO">Typing text '1' into text field 'xpath=//input[@name='spQuantity']'</msg>
+<status status="PASS" endtime="20170706 10:45:37.973" starttime="20170706 10:45:37.806"></status>
+</kw>
+<status status="PASS" endtime="20170706 10:45:37.974" starttime="20170706 10:45:37.692"></status>
+</kw>
+<kw name="Click Save" library="CreateInvoice">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${savelineitemsbutton}</arg>
+</arguments>
+<msg timestamp="20170706 10:45:37.976" level="INFO">Clicking element 'xpath =//*[@class='fa fa-check']'.</msg>
+<status status="PASS" endtime="20170706 10:45:38.154" starttime="20170706 10:45:37.975"></status>
+</kw>
+<status status="PASS" endtime="20170706 10:45:38.154" starttime="20170706 10:45:37.974"></status>
+</kw>
+<status status="PASS" endtime="20170706 10:45:38.154" starttime="20170706 10:45:37.081"></status>
+</kw>
+<kw name="Upload Attachment" library="CreateInvoice">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5s</arg>
+</arguments>
+<msg timestamp="20170706 10:45:43.158" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" endtime="20170706 10:45:43.158" starttime="20170706 10:45:38.158"></status>
+</kw>
+<kw name="Choose File" library="Selenium2Library">
+<doc>Inputs the `file_path` into file input field found by `locator`.</doc>
+<arguments>
+<arg>${uploadattachmentbutton}</arg>
+<arg>${attachmentfile}</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20170706 10:45:43.493" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20170706 10:45:43.494" starttime="20170706 10:45:43.161"></status>
+</kw>
+<msg timestamp="20170706 10:45:43.494" level="FAIL">File 'C:UserslkandumallaPictureHydrangeas.jpg' does not exist on the local file system</msg>
+<status status="FAIL" endtime="20170706 10:45:43.494" starttime="20170706 10:45:43.159"></status>
+</kw>
+<status status="FAIL" endtime="20170706 10:45:43.495" starttime="20170706 10:45:38.157"></status>
+</kw>
+<kw type="teardown" name="End Web Test" library="Common">
+<kw name="Close Browser" library="Selenium2Library">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20170706 10:45:46.624" starttime="20170706 10:45:43.496"></status>
+</kw>
+<status status="PASS" endtime="20170706 10:45:46.624" starttime="20170706 10:45:43.495"></status>
+</kw>
+<tags>
+<tag>Invoice</tag>
+<tag>Smoke</tag>
+</tags>
+<status status="FAIL" endtime="20170706 10:45:46.625" critical="yes" starttime="20170706 10:45:05.042">File 'C:UserslkandumallaPictureHydrangeas.jpg' does not exist on the local file system</status>
+</test>
+<status status="FAIL" endtime="20170706 10:45:46.627" starttime="20170706 10:45:04.810"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="1" pass="0">Critical Tests</stat>
+<stat fail="1" pass="0">All Tests</stat>
+</total>
+<tag>
+<stat fail="1" pass="0">Invoice</stat>
+<stat fail="1" pass="0">Smoke</stat>
+</tag>
+<suite>
+<stat fail="1" id="s1" name="Employeeportaltests" pass="0">Employeeportaltests</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20170706 10:45:05.004" level="WARN">Imported resource file 'C:\Python27\GitHub\SEIPortals_-master\Resources\Page Objects\EmployeePortalPageObjects\InvoiceDetail.robot' is empty.</msg>
+<msg timestamp="20170706 10:45:05.007" level="WARN">Imported resource file 'C:\Python27\GitHub\SEIPortals_-master\Resources\Page Objects\EmployeePortalPageObjects\RequestDetail.robot' is empty.</msg>
+<msg timestamp="20170706 10:45:05.009" level="WARN">Imported resource file 'C:\Python27\GitHub\SEIPortals_-master\Resources\Page Objects\EmployeePortalPageObjects\QuoteDetail.robot' is empty.</msg>
+</errors>
+</robot>
